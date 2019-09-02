@@ -1,18 +1,28 @@
 @extends('layout')
 
 @section('content')
-    <h1>Edit Project </h1>
+    
+    <h1 class="title">Edit Project</h1>
 
-    <form action="/projects/{project}" method="POST">
+    <form method="POST" action="/projects/{{ $project->id}}">
+        {{ method_field('PATCH') }}
         @csrf 
-        <div>
-            <input type="text" name="title" placeholder="Project Title">
+        <div class="field">
+            <label class="label" for="title">Title</label>
+            <div class="control">
+                <input class="input" type="text" name="title" placeholder="Title" value="{{ $project->title }}">
+            </div>
         </div>
-        <div>
-            <textarea name="description" placeholder="Project Description"></textarea>
+        <div class="field">
+            <label class="label" for="description">Description</label>
+            <div class="control">
+                <textarea class="textarea" name="description" placeholder="Description">{{ $project->description }}</textarea>
+            </div>
         </div>
-        <div>
-            <button type="submit">Create Project</button>
+        <div class="field">
+            <div class="control">
+                <button type="submit" class="button is-link">Update Project</button>
+            </div>
         </div>
     </form>
 @endsection
