@@ -1,10 +1,9 @@
 @extends('layout')
 
-@section('title','Create Project')
+@section('content')
+    <h1>Edit Project </h1>
 
-    <h1>Create a New Project </h1>
-
-    <form action="/projects" method="POST">
+    <form action="/projects/{project}" method="POST">
         @csrf 
         <div>
             <input type="text" name="title" placeholder="Project Title">
