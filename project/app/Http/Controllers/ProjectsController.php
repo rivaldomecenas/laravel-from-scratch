@@ -13,6 +13,11 @@ class ProjectsController extends Controller
 
         return view ('projects.index', compact('projects'));
     }
+
+    public function show()
+    {
+
+    }
     
     public function create()
     {
@@ -31,4 +36,21 @@ class ProjectsController extends Controller
 
         return redirect('/projects');
     }
+
+    public function edit()
+    {
+
+    }
+
+    public function update()
+    {
+
+    }
+
+    public function destroy()
+    {
+        
+    }
+
+
 }
